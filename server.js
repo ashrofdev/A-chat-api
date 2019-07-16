@@ -35,6 +35,7 @@ app.post('/register', (req, res)=>{
     .insert({
         email: req.body.email,
         name: req.body.name,
+        password: req.body.password,
         joined: new Date()
     })
     .then(user=>{
@@ -49,7 +50,7 @@ let time = ()=>{
        return date-12 +1
 
     }else{
-        return date
+        return date+1
     }
 }
 
