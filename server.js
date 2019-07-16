@@ -18,6 +18,10 @@ const app = express()
 app.use(bodyParser.json())
 app.use(cors())
 
+app.get('/', (req, res)=>{
+        res.json('..............')
+})
+
 app.get('/messages', (req, res)=>{
     db.select('*').from('message').then (data=>{
         res.json(data)
@@ -43,14 +47,17 @@ app.post('/register', (req, res)=>{
     }).catch(err=> res.json('unable to register'))
 })
 let d = new Date()
-let date = d.getUTCHours()
+let date = d.getHours()
 
 let time = ()=>{
     if(date>12){
-       return date-12 +1
+       return `${date-12}:${d.getMinutes()}PM`
 
+    }if(date===12){
+        return `${date}:${d.getMinutes()}PM`
+ 
     }else{
-        return date+1
+        return `${date}:${d.getMinutes()}AM`
     }
 }
 
@@ -62,11 +69,11 @@ app.post('/send-message', (req, res)=>{
     .insert({
         name: req.body.name,
         message: req.body.message,
-        mtime: `${time()}:${d.getUTCMinutes()}`
+        mtime: time()
     })
     .then(message=>{
         res.json(message)
     }).catch(err=> res.json('unable to send'))
 })
 
-app.listen(3000)
+app.listen(process.env.PORT)
