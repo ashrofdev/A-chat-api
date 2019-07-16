@@ -6,10 +6,8 @@ const cors = require('cors')
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
-      user : '',
-      password : '',
-      database : 'Group-chat'
+      connectionString : process.env.DAABASE_URL,
+      ssl: true
     }
 })
 
