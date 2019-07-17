@@ -31,7 +31,7 @@ app.get('/users', (req, res)=>{
     })
 })
 
-app.post('/register', (req, res)=>{
+app.post('/', (req, res)=>{
     db('users')
     .returning('*')
     .insert({
