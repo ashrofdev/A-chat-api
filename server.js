@@ -31,6 +31,11 @@ app.get('/users', (req, res)=>{
     })
 })
 
+let joined = new Date
+let year = joined.getFullYear()
+let month = joined.getMonth()
+let day = joined.getDate()
+
 app.post('/register', (req, res)=>{
     db('users')
     .returning('*')
@@ -38,7 +43,7 @@ app.post('/register', (req, res)=>{
         email: req.body.email,
         name: req.body.name,
         password: req.body.password,
-        joined: new Date()
+        joined: day
     })
     .then(user=>{
         res.json(user)
