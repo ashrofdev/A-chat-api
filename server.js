@@ -43,7 +43,7 @@ app.post('/register', (req, res)=>{
         email: req.body.email,
         name: req.body.name,
         password: req.body.password,
-        joined: day
+        joined: `${day}-${month}-${year}`
     })
     .then(user=>{
         res.json(user)
