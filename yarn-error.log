@@ -1,0 +1,49 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add nodemailer
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/ashrofdev/Developer/flutter/bin:/Users/ashrofdev/.rvm/bin:/Users/ashrofdev/Developer/flutter/bin:/Users/ashrofdev/.rvm/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/body-parser: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:141224:19)
+      at ontimeout (timers.js:436:11)
+      at tryOnTimeout (timers.js:300:5)
+      at listOnTimeout (timers.js:263:5)
+      at Timer.processTimers (timers.js:223:10)
+
+npm manifest: 
+  {
+    "name": "face-recognition-brain-master",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+      "start": "nodemon server.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "knex": "^0.18.3",
+      "nodemon": "^1.19.1",
+      "pg": "^7.11.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
