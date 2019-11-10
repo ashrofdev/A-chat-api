@@ -34,31 +34,7 @@ let month = joined.getMonth()
 let day = joined.getDate()
 
 app.post('/register', (req, res)=>{
-    const nodemailer = require('nodemailer');
-
-    const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'ashsal2001@gmail.com',
-        pass: 'salmanashrafatmagul'
-    }
-    });
-
-    const mailOptions = {
-    from: 'ashsal2001@gmail.com',
-    to: 'ashsall115@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: 'WOW it actually worked!'
-    };
-
-    transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
-    });
-
+    
     db('users')
     .returning('*')
     .insert({
